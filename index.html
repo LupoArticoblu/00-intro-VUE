@@ -37,6 +37,12 @@
     <p v-text="mioTestoHTML"></p>
     <!--v-html mi permette di inserire codice html come valore di una variabile data, al contrario di v-text che inserisce unicamente del testo-->
     <p v-html="mioTestoHTML"></p>
+
+    <!--v-on: creiamo un bottone, questo bottone reagendo cambierà il colore del testo-->
+    <button @click="colText = 'green'">Clicca per cambiare il colore</button>
+    <!-- così come per il v-bind anche v-on ha una scorciatoia "@"
+     quindi "@click" per far si che il bottone resti in ascolto do un attributo "click" che cambierà il valore di "colText"
+     ATTENZIONE: tutto ciò che viene scritto all'interno degli eventi bindati non sono stringhe, ma codice JS-->
   </div>
   
   <!--in JS sarebbe stato così per ogni elemento
