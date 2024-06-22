@@ -12,11 +12,34 @@ createApp({
       //prendo dinamicamente il valore di colText usando v-bind nel tag h2
       colText: 'blue',
       colText2: 'red',
-      colText3: 'green',
+      colText3: 'yellow',
       mioTestoHTML: 'Testo <strong>html</strong>',
+      mostra: true
       //ATTENZIONE: ogni volta che il valore del dato cambia, il DOM viene riscritto e reattivamente cambia in tutti i punti del codice
     }
-  }
+  },
+  //altri metodi: le nostre funzioni andranno racchiuse tutte nell'oggetto methods
+  methods: {
+    funzioneEstesa: function() {
+      console.log('funzione estesa');
+    },
+    funCompatta() {
+      console.log('funzione compatta');
+    },
+    arrow: () => {
+      console.log('arrow function');
+    },
+    testoRosso() {
+      //per raggiungere un elemento del return di data bisogna usare this perchè i data sono elementi di tutto vue
+      this.colText2 = 'green';
+    },
+    testoGiallo(colore) {
+      this.colText3 = colore;
+    },
+    mostraTesto() {
+      this.mostra = !this.mostra;
+    }
+  }  
 }).mount('#app')
 //questo può essere sia il nosto sito completo che un solo widget funzionante con vue, mentre il resto della pagina può rispondere ad altro
 

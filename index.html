@@ -39,10 +39,20 @@
     <p v-html="mioTestoHTML"></p>
 
     <!--v-on: creiamo un bottone, questo bottone reagendo cambierà il colore del testo-->
-    <button @click="colText = 'green'">Clicca per cambiare il colore</button>
+    <button @click="colText = 'green'">Clicca per cambiare il colore</button><br>
     <!-- così come per il v-bind anche v-on ha una scorciatoia "@"
-     quindi "@click" per far si che il bottone resti in ascolto do un attributo "click" che cambierà il valore di "colText"
-     ATTENZIONE: tutto ciò che viene scritto all'interno degli eventi bindati non sono stringhe, ma codice JS-->
+    quindi "@click" per far si che il bottone resti in ascolto do un attributo "click" che cambierà il valore di "colText"
+    ATTENZIONE: tutto ciò che viene scritto all'interno degli eventi bindati non sono stringhe, ma codice JS-->
+    
+    <button @click="testoRosso()">Clicca per cambiare il colore[function addicted]</button><br>
+    <button @click="testoGiallo('green')">Clicca per cambiare il colore[function addicted with argoment]</button><br>
+    <button @click="funzioneEstesa()">Funzione estesa log</button><br> 
+    <button @click="funCompatta()">Funzione compatta log</button><br> 
+    <button @click="arrow()">Arrow function log</button><br> 
+    <!--v-show si usa per nascondere elementi ed è una direttiva del tag p: v-show="condizione" se true sarà visibile-->
+    <p v-show="mostra">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta eum harum eaque similique, inventore laborum vitae, tenetur assumenda voluptas voluptatem quo? Ut blanditiis sequi illo odit ullam. Incidunt, fugit et!</p>
+    <!--bottone toglle che mostra e nasconde il testo-->
+    <button @click="mostraTesto()">Clicca per mostrare o nascondere</button>
   </div>
   
   <!--in JS sarebbe stato così per ogni elemento
