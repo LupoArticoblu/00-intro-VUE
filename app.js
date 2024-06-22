@@ -12,7 +12,8 @@ createApp({
       //prendo dinamicamente il valore di colText usando v-bind nel tag h2
       colText: 'blue',
       colText2: 'red',
-      colText3: 'green'
+      colText3: 'green',
+      mioTestoHTML: 'Testo <strong>html</strong>',
       //ATTENZIONE: ogni volta che il valore del dato cambia, il DOM viene riscritto e reattivamente cambia in tutti i punti del codice
     }
   }

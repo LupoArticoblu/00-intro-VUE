@@ -17,6 +17,7 @@
   v-for
   v-if/v-else
   v-show
+  v-html
   -->
   <input type="text" v-model="message">
     <!-- per utilizzare le variabili di vue bisogna usare il template con doppie graffe(mustache notation)-->
@@ -32,6 +33,10 @@
     <!--altro modo per scrivere il v-bind è usando solo i ":"prima di qualsiasi attributo. In questo caso usiamo :class-->
     <h2 :class="colText2">{{ message }}</h2>
     <h2 :class="colText3">{{ message }}</h2>
+  <!--vediamo come usare il v-text e v-html, direttive del tag p che inseriscono testo da una variabile data-->
+    <p v-text="mioTestoHTML"></p>
+    <!--v-html mi permette di inserire codice html come valore di una variabile data, al contrario di v-text che inserisce unicamente del testo-->
+    <p v-html="mioTestoHTML"></p>
   </div>
   
   <!--in JS sarebbe stato così per ogni elemento
