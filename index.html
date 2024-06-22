@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3"></script>
+  <title>Hello vue</title>
+</head>
+<body>
+  
+  <div id="app">
+  <!--Vediamo come sfruttare queste potenzialità
+  v-model è un attributo speciale di vue che fa parte delle direttive per interagire col DOM, le più usate sono:
+  v-bind
+  v-on
+  v-for
+  v-if/v-else
+  v-show
+  -->
+  <input type="text" v-model="message">
+    <!-- per utilizzare le variabili di vue bisogna usare il template con doppie graffe(mustache notation)-->
+    <h1>{{ message }}</h1>
+    <p>{{ message }} altro messaggio scritto come variabile in data: {{ altro_message }}</p>
+    <!--associando ad un model, che è una direttiva del tag input, un nostro data possiamo modificare tale data reattivamente-->
+    <h3>IL V-MODEL</h3>
+    <input type="text" v-model="message">
+    <!--passiamo in v-model la proprietà per colorare il primo testo-->
+    <input style="margin: 10px;" type="text" v-model="colText">
+    <!--vediamo ora come funziona il v-bind sulle classi css-->
+    <h2 v-bind:class="colText">{{ message }}</h2>
+    <!--altro modo per scrivere il v-bind è usando solo i ":"prima di qualsiasi attributo. In questo caso usiamo :class-->
+    <h2 :class="colText2">{{ message }}</h2>
+    <h2 :class="colText3">{{ message }}</h2>
+  </div>
+  
+  <!--in JS sarebbe stato così per ogni elemento
+  <input type="text" id="inputField">
+  <h3 id="displayText"></h3>
+
+  <script>
+    //ATTENZIONE: questa stringa 'DOMContentLoaded' può essere molto interessante 
+    document.addEventListener('DOMContentLoaded', () => {
+    const inputField = document.getElementById('inputField');
+    const displayText = document.getElementById('displayText');
+
+      inputField.addEventListener('input', () => {
+        displayText.textContent = inputField.value;
+      });
+    });
+  </script>
+  -->
+  <script src="app.js"></script>
+</body>
+</html>
