@@ -14,7 +14,8 @@ createApp({
       colText2: 'red',
       colText3: 'yellow',
       mioTestoHTML: 'Testo <strong>html</strong>',
-      mostra: true
+      mostra: true,
+      sottolineato: true
       //ATTENZIONE: ogni volta che il valore del dato cambia, il DOM viene riscritto e reattivamente cambia in tutti i punti del codice
     }
   },
@@ -38,6 +39,9 @@ createApp({
     },
     mostraTesto() {
       this.mostra = !this.mostra;
+    },
+    sottolinea(){
+      this.sottolineato = !this.sottolineato;
     }
   }  
 }).mount('#app')

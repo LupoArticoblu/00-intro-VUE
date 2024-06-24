@@ -32,7 +32,10 @@
     <h2 v-bind:class="colText">{{ message }}</h2>
     <!--altro modo per scrivere il v-bind è usando solo i ":"prima di qualsiasi attributo. In questo caso usiamo :class-->
     <h2 :class="colText2">{{ message }}</h2>
-    <h2 :class="colText3">{{ message }}</h2>
+    <!--nulla mi vieta di inserire una classe non bindata"class=""-->
+    <h2 class="underline":class="colText3">{{ message }} con 2 classi, una dinamica e l'altra no</h2>
+    <!--posso anche passare più classi in modo dinamico tramite array-->
+    <h2 :class="[colText3, 'underline']">{{ message }} con 2 classi dinamiche</h2>
   <!--vediamo come usare il v-text e v-html, direttive del tag p che inseriscono testo da una variabile data-->
     <p v-text="mioTestoHTML"></p>
     <!--v-html mi permette di inserire codice html come valore di una variabile data, al contrario di v-text che inserisce unicamente del testo-->
@@ -43,7 +46,6 @@
     <!-- così come per il v-bind anche v-on ha una scorciatoia "@"
     quindi "@click" per far si che il bottone resti in ascolto do un attributo "click" che cambierà il valore di "colText"
     ATTENZIONE: tutto ciò che viene scritto all'interno degli eventi bindati non sono stringhe, ma codice JS-->
-    
     <button @click="testoRosso()">Clicca per cambiare il colore[function addicted]</button><br>
     <button @click="testoGiallo('green')">Clicca per cambiare il colore[function addicted with argoment]</button><br>
     <button @click="funzioneEstesa()">Funzione estesa log</button><br> 
@@ -53,6 +55,11 @@
     <p v-show="mostra">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta eum harum eaque similique, inventore laborum vitae, tenetur assumenda voluptas voluptatem quo? Ut blanditiis sequi illo odit ullam. Incidunt, fugit et!</p>
     <!--bottone toglle che mostra e nasconde il testo-->
     <button @click="mostraTesto()">Clicca per mostrare o nascondere</button>
+    <!--passiamo alla classe bindata un oggetto in cui scriviamo una condizione(la classe underline non sarà dinamica ma statica diventerà false al click del bottone){classeDaStampare: condizione}-->
+    <h3 :class="{underline: sottolineato}">classe con condizione!</h3>
+    <button @click="sottolinea()">Clicca per sottolineare</button><br>
+    <!-- una classe con condizione può essere passata in un array delle classi bindate-->
+    <h3 :class="[colText3, {underline: sottolineato}]">classe dinamica + condizione</h3>
   </div>
   
   <!--in JS sarebbe stato così per ogni elemento
